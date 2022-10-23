@@ -45,7 +45,3 @@ You can custom colorlize to custom stylesheet.
 ## LICENSE
 
 MIT
-
-```
-
-```
