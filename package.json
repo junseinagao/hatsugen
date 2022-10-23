@@ -2,6 +2,19 @@
   "name": "hatsugen",
   "version": "0.0.1",
   "description": "hatsugen is a javascript for highlight sentence in remarks with a html file",
+  "keywords": [
+    "javascript",
+    "highlight",
+    "remarks"
+  ],
+  "homepage": "https://github.com/junseinagao/hatsugen#readme",
+  "bugs": {
+    "url": "https://github.com/junseinagao/hatsugen/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junseinagao/hatsugen.git"
+  },
   "license": "MIT",
   "author": "junseinagao",
   "type": "module",
@@ -17,11 +30,11 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
-    "test": "vitest",
+    "dev": "vite",
     "lint": "eslint ./src --ext .ts --fix",
-    "prepare": "rm -rf dist && pnpm run build"
+    "prepare": "rm -rf dist && pnpm run build",
+    "test": "vitest"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.40.1",
