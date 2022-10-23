@@ -1,6 +1,6 @@
 {
   "name": "hatsugen",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "hatsugen is a javascript for highlight sentence in remarks with a html file",
   "keywords": [
     "javascript",
