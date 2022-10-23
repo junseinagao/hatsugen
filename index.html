@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>script-highlight-comment-line</title>
+    <link rel="stylesheet" href="./dist/css/default.css" />
+    <style>
+      #app {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      .title {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+      .container {
+        width: 100%;
+        display: flex;
+        column-gap: 30px;
+        justify-content: center;
+      }
+      .preview-area {
+        border: solid 1px black;
+        padding: 15px;
+        flex: 1;
+      }
+      textarea {
+        padding: 15px;
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1 class="title">Hatsugen DEMO</h1>
+      <div class="container">
+        <textarea v-model="markdownInput" rows="30"></textarea>
+        <div class="preview-area" v-html="preview"></div>
+      </div>
+    </div>
+    <script type="module">
+      import { HTMLHighlighter } from "./dist/hatsugen.js";
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js";
+      import { unified } from "https://esm.sh/unified@10?bundle";
+      import remarkParse from "https://esm.sh/remark-parse@10?bundle";
+      import remarkRehype from "https://esm.sh/remark-rehype@10?bundle";
+      import rehypeStringify from "https://esm.sh/rehype-stringify@9?bundle";
+      import remarkBreaks from "https://esm.sh/remark-breaks@3?bundle";
+      const defaultMarkdownInput = `
+Hatsugenについて
+
+Aさん) Hatsugen は最高のツールですね！
+Bさん) わかります! 僕も使っています。
+
+- 発言者 ) みたいに書くと発言者ごとに色が付きます。
+
+Dさん) これで、議事録(remarks)がわかりやすくなりますね。
+
+議事録を発言録のように書くことについて
+
+- Aさん) 議事録で一番大切なことは何だと思いますか?
+- Bさん) 私は会議に参加できなかった人が、会議の内容を理解できるように書くことだと思います。
+- Cさん) でも議事録を後から読んでもどのように議事録に書いてある結論が出たのかわからないと思います。だから、議事録を書いても意味がないんじゃないですか?
+  - Aさん) そこで、議事録を発言録のように書くことについて考えました。
+  - Cさん) それは素晴らしいですね。
+- Aさん) しかも、hatsugen を使えばその議事録はとても読みやすくなります。`;
+
+      createApp({
+        data() {
+          return {
+            markdownInput: defaultMarkdownInput,
+            preview: "",
+          };
+        },
+        methods: {
+          parseMarkdown() {
+            unified()
+              .use(remarkParse)
+              .use(remarkBreaks)
+              .use(remarkRehype)
+              .use(rehypeStringify)
+              .process(this.markdownInput, (err, file) => {
+                this.preview = String(file);
+              });
+          },
+        },
+        created() {
+          this.parseMarkdown(this.markdownInput);
+        },
+        updated() {
+          this.parseMarkdown(this.markdownInput);
+          HTMLHighlighter();
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

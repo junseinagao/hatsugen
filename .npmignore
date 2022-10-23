@@ -1,0 +1,9 @@
+__tests__
+node_modules
+public
+src
+index.html
+.eslintrc.cjs
+hatsugen-demo.png
+*.config.ts
+!dist

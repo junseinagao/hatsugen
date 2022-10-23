@@ -1,0 +1,39 @@
+:root {
+  --hatsugen-color-1: #007a4b;
+  --hatsugen-color-2: #2a7ab0;
+  --hatsugen-color-3: #765ab0;
+  --hatsugen-color-4: #8d6708;
+  --hatsugen-color-5: #aa2e00;
+  --hatsugen-color-6: #cf000f;
+}
+
+[data-hatsugen-id="1"] {
+  color: var(--hatsugen-color-1);
+}
+[data-hatsugen-id="2"] {
+  color: var(--hatsugen-color-2);
+}
+[data-hatsugen-id="3"] {
+  color: var(--hatsugen-color-3);
+}
+[data-hatsugen-id="4"] {
+  color: var(--hatsugen-color-4);
+}
+[data-hatsugen-id="5"] {
+  color: var(--hatsugen-color-5);
+}
+[data-hatsugen-id="6"] {
+  color: var(--hatsugen-color-6);
+}
+[data-hatsugen-id="7"] {
+  color: var(--hatsugen-color-1);
+}
+[data-hatsugen-id="8"] {
+  color: var(--hatsugen-color-2);
+}
+[data-hatsugen-id="9"] {
+  color: var(--hatsugen-color-3);
+}
+[data-hatsugen-id="10"] {
+  color: var(--hatsugen-color-4);
+}
