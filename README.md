@@ -8,15 +8,21 @@
 
 ![hatsugen-demo](./hatsugen-demo.png)
 
-[Live Demo]()
+[Live Demo](https://junseinagao.github.io/hatsugen/)
 
 ## Simple Usage
 
 Load css and js in your html file.
 
 ```html
-<link rel="stylesheet" href="./dist/css/default.css" />
-<script type="module" src="./dist/hatsugen.js"></script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/browse/hatsugen@0.0.1/dist/hatsugen.js"
+/>
+<script
+  type="module"
+  src="https://unpkg.com/browse/hatsugen@0.0.1/dist/css/default.css"
+></script>
 ```
 
 You can custom colorlize to custom stylesheet.
