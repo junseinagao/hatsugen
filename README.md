@@ -15,14 +15,8 @@
 Load css and js in your html file.
 
 ```html
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/browse/hatsugen@0.0.1/dist/hatsugen.js"
-/>
-<script
-  type="module"
-  src="https://unpkg.com/browse/hatsugen@0.0.1/dist/css/default.css"
-></script>
+<link rel="stylesheet" href="https://www.unpkg.com/hatsugen@0.0.1/dist/css/default.css">
+<script type="module" src="https://www.unpkg.com/hatsugen@0.0.1/dist/hatsugen.js"></script>
 ```
 
 You can custom colorlize to custom stylesheet.
